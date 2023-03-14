@@ -136,8 +136,12 @@ jobs:
           rm -rf $(find ./bin/targets/ -type d -name "packages")
           cp -rf ./.config ./bin/targets/
 
-      - name: Upload Firmware
-        uses: actions/upload-artifact@v3
-        with:
-          name: Firmware_R4S_${{env.BUILD_DATE}}
-          path: ./bin/targets/
+    - name: Upload firmware to release
+      uses: softprops/action-gh-release@v1
+      if: steps.tag.outputs.status == 'success' && !cancelled()
+      env:
+        GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+      with:
+        tag_name: ${{ steps.tag.outputs.release_tag }}
+        body_path: release.txt
+        files: ${{ env.FIRMWARE }}/*
