@@ -15,7 +15,8 @@ permissions:
   contents: read
 
 jobs:
-    name: Build x86 Firmware
+  build_openwrt:
+    name: Build R4S Firmware
     runs-on: ubuntu-latest
     steps:
       - name: Organize Values
