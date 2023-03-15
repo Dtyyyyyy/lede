@@ -10,14 +10,14 @@ name: OpenWrt-CI
 on:
   push:
     branches: 
-        - master
+       - master
 
 permissions:
   contents: read
 
 jobs:
   build_openwrt:
-    name: Build R4S Firmware
+    name: Build x86 Firmware
     runs-on: ubuntu-latest
     steps:
       - name: Organize Values
