@@ -22,7 +22,7 @@ jobs:
       - name: Organize Values
         run: |
           export BUILD_DATE=$(date "+%Y-%m-%d_%H:%M:%S")
-          echo "BUILD_DATE=$ACTIONS_TRIGGER_OPENWRT" >> $GITHUB_ENV
+          echo "BUILD_DATE=$BUILD_DATE" >> $GITHUB_ENV
 
       - name: Initialization Environment
         env:
@@ -135,12 +135,8 @@ jobs:
           rm -rf $(find ./bin/targets/ -type d -name "packages")
           cp -rf ./.config ./bin/targets/
 
-    - name: Upload firmware to release
-      uses: softprops/action-gh-release@v1
-      if: steps.tag.outputs.status == 'success' && !cancelled()
-      env:
-        GITHUB_TOKEN: ${{ secrets.ACTIONS_TRIGGER_OPENWRT }}
-      with:
-        tag_name: ${{ steps.tag.outputs.release_tag }}
-        body_path: release.txt
-        files: ${{ env.FIRMWARE }}/*
+      - name: Upload Firmware
+        uses: actions/upload-artifact@v3
+        with:
+          name: Firmware_R4S_${{env.BUILD_DATE}}
+          path: ./bin/targets/
