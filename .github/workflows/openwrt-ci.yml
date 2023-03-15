@@ -15,7 +15,7 @@ permissions:
   contents: read
 
 jobs:
-  build_openwrt:
+  build:
     name: Build x86 Firmware
     runs-on: ubuntu-latest
     steps:
