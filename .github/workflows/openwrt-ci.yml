@@ -15,7 +15,6 @@ permissions:
   contents: read
 
 jobs:
-  build:
     name: Build x86 Firmware
     runs-on: ubuntu-latest
     steps:
