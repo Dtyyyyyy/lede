@@ -22,7 +22,7 @@ jobs:
       - name: Organize Values
         run: |
           export BUILD_DATE=$(date "+%Y-%m-%d_%H:%M:%S")
-          echo "BUILD_DATE=$BUILD_DATE" >> $GITHUB_ENV
+          echo "BUILD_DATE=$ACTIONS_TRIGGER_OPENWRT" >> $GITHUB_ENV
 
       - name: Initialization Environment
         env:
