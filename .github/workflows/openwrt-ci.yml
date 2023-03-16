@@ -45,6 +45,7 @@ jobs:
 
       - name: Update Plugins
         run: |
+          sed -i '1i src-git haibo https://github.com/haiibo/openwrt-packages' feeds.conf.default
           #OpenClash
           git clone --branch "dev" --single-branch https://github.com/vernesong/OpenClash.git package/OpenClash
 
