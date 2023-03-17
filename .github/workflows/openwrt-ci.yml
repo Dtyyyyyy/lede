@@ -7,8 +7,8 @@
 #
 name: OpenWrt-CI
 
-#on:
-#  push:
+on:
+  push:
    branches: master12
 
 permissions:
