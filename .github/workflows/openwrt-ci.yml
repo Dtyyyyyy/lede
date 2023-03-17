@@ -111,6 +111,19 @@ jobs:
           CONFIG_PACKAGE_luci-app-onliner=y
           CONFIG_PACKAGE_luci-app-bypass=y
           CONFIG_PACKAGE_luci-app-adguardhome=y
+          CONFIG_PACKAGE_luci-app-alist=y
+          CONFIG_PACKAGE_luci-app-aliddns=y
+          CONFIG_PACKAGE_luci-app-aliyundrive-fuse=y
+          CONFIG_PACKAGE_luci-app-aliyundrive-webdav=y
+          CONFIG_PACKAGE_luci-app-eqos=y
+          CONFIG_PACKAGE_luci-app-gost=y
+          CONFIG_PACKAGE_luci-app-ddns-go=y
+          CONFIG_PACKAGE_luci-app-ddnsto=y
+          CONFIG_PACKAGE_luci-app-openvpn=y
+          CONFIG_PACKAGE_luci-app-nps=y
+          CONFIG_PACKAGE_luci-app-ipsec-vpnd=y
+          CONFIG_PACKAGE_luci-app-haproxy-tcp=y
+          CONFIG_PACKAGE_luci-app-guest-wifi=y
           #删除插件
           CONFIG_PACKAGE_luci-app-accesscontrol=n
           CONFIG_PACKAGE_luci-app-ddns=n
@@ -143,5 +156,5 @@ jobs:
       - name: Upload Firmware
         uses: actions/upload-artifact@v3
         with:
-          name: Firmware_R4S_${{env.BUILD_DATE}}
+          name: Firmware_x86_${{env.BUILD_DATE}}
           path: ./bin/targets/
