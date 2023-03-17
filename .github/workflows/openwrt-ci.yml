@@ -7,9 +7,9 @@
 #
 name: OpenWrt-CI
 
-on:
-  push:
-    branches: master
+#on:
+#  push:
+   branches: master12
 
 permissions:
   contents: read
@@ -89,6 +89,7 @@ jobs:
           CONFIG_PACKAGE_ipv6helper=y
           CONFIG_PACKAGE_ip6tables-extra=y
           CONFIG_PACKAGE_ip6tables-mod-nat=y
+          CONFIG_PACKAGE_nano=y
           #增加主题
           CONFIG_PACKAGE_luci-theme-design=y
           CONFIG_PACKAGE_luci-theme-argon=y
