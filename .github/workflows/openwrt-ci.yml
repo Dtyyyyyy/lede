@@ -16,7 +16,7 @@ permissions:
 
 jobs:
   build_openwrt:
-    name: Build R4S Firmware
+    name: Build x86 Firmware
     runs-on: ubuntu-latest
     steps:
       - name: Organize Values
@@ -116,7 +116,6 @@ jobs:
           CONFIG_PACKAGE_luci-app-aliyundrive-fuse=y
           CONFIG_PACKAGE_luci-app-aliyundrive-webdav=y
           CONFIG_PACKAGE_luci-app-eqos=y
-          CONFIG_PACKAGE_luci-app-gost=y
           CONFIG_PACKAGE_luci-app-ddns-go=y
           CONFIG_PACKAGE_luci-app-ddnsto=y
           CONFIG_PACKAGE_luci-app-openvpn=y
