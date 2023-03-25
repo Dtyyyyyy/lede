@@ -135,7 +135,6 @@ jobs:
 
       - name: Download Packages
         run: |
-          cd ./lede
           make download -j16
           cat .config
           ls -lA
