@@ -134,9 +134,11 @@ jobs:
           make defconfig
 
       - name: Download Packages
-        run: make download -j16
-             cat .config
-             ls -lA
+        run: |
+          cd ./lede
+          make download -j16
+          cat .config
+          ls -lA
 
       - name: Compile Firmware
         run: |
