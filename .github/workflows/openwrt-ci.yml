@@ -70,6 +70,7 @@ jobs:
 
       - name: Generate Configuration File
         run: |
+          ls -lA
           rm -rf ./tmp
           rm -rf ./.config*
           touch ./.config
@@ -134,6 +135,8 @@ jobs:
 
       - name: Download Packages
         run: make download -j16
+             cat .config
+             ls -lA
 
       - name: Compile Firmware
         run: |
